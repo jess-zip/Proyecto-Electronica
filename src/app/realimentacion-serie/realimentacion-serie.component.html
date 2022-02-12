@@ -1,0 +1,212 @@
+<h1 class="mt-5">Realimentación del colector con dos resistencias en serie</h1>
+  <h2>Transistores BJT</h2>
+
+<table class="mb-5">
+  <thead>
+    <tr>
+      <th><h2 class="datosIngresa">Ingresa los siguentes datos</h2></th>
+    </tr>
+  </thead>
+  <tr>
+    <td> <span  matBadgeOverlap="false">Vcc= </span></td>
+    <td>
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label for="VCC">Voltaje de entrada</mat-label>
+          <input [(ngModel)]="VCC" type="number" id="VCC" matInput placeholder="valor sin unidad">
+        </mat-form-field>
+      </p>
+    </td>
+    <td rowspan="6">
+      <img src="../../assets/serie.jpg" alt="">
+  </td>
+  </tr>
+  <tr>
+    <td> <span  matBadgeOverlap="false">RC=</span></td>
+    <td>
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label for="RC">Res. de Colector</mat-label>
+          <input [(ngModel)]="RC" type="number" id="RC" matInput placeholder="valor sin unidad">
+        </mat-form-field>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td> <span  matBadgeOverlap="false">RE=</span></td>
+    <td>
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label for="RE">Res.emisor</mat-label>
+          <input [(ngModel)]="RE" type="number" id="RE" matInput placeholder="valor sin unidad">
+        </mat-form-field>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td> <span  matBadgeOverlap="false">R1=</span></td>
+    <td>
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label for="R1">Res 1</mat-label>
+          <input [(ngModel)]="R1" type="number" id="R1" matInput placeholder="valor sin unidad">
+        </mat-form-field>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td> <span  matBadgeOverlap="false">R2=</span></td>
+    <td>
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label for="R2">Res 2</mat-label>
+          <input [(ngModel)]="R2" type="number" id="R2" matInput placeholder="valor sin unidad">
+        </mat-form-field>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td> <span  matBadgeOverlap="false">Beta=</span></td>
+    <td>
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label for="Beta">Ganancia</mat-label>
+          <input [(ngModel)]="Beta" type="number" id="Beta" matInput placeholder="valor sin unidad">
+        </mat-form-field>
+      </p>
+    </td>
+  </tr>
+  <button style="margin-left:auto;margin-right:auto; position:absolute;" (click)="limpiar()" mat-raised-button color="red">limpiar</button>
+</table>
+<button style="margin-left:auto;margin-right:auto; position:absolute;" (click)="regresar()" mat-raised-button color="primary">Regresar</button>
+  
+<table class="container mb-5" style="margin-left:auto;margin-right:auto" >
+    <thead>
+      <tr>
+        <th><h1>Voltaje</h1></th>
+        <th><h1>Volts</h1></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>VCC</td>
+        <td>{{VCC}}</td>
+      </tr>
+      <tr>
+        <td>VCE</td>
+        <td>{{VCE}}</td>
+      </tr>
+      <tr>
+        <td>VRC</td>
+        <td>{{VRC}}</td>
+      </tr>
+      <tr>
+        <td>VRB</td>
+        <td>{{VRB}}</td>
+      </tr>
+      <tr>
+        <td>VB</td>
+        <td>{{VB}}</td>
+      </tr>
+      <tr>
+        <td>VC</td>
+        <td>{{VC}}</td>
+      </tr>
+      <tr>
+        <td>VE</td>
+        <td>{{VE}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!--Corriente-->
+  <table class="container mb-5" style="margin-left:auto;margin-right:auto">
+    <thead>
+      <tr>
+        <th><h1>Corriente</h1></th>
+        <th><h1>A</h1></th>
+        <th><h1>mA</h1></th>
+        <th><h1>µA</h1></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>IB</td>
+        <td>{{IB}}</td>
+        <td>{{IB * 1000}}</td>
+        <td>{{IB * 1000000}}</td>
+      </tr>
+      <tr>
+        <td>IC</td>
+        <td>{{IC}}</td>
+        <td>{{IC * 1000}}</td>
+        <td>{{IC * 1000000}}</td>
+      </tr>
+      <tr>
+        <td>ICsat</td>
+        <td>{{ICsat}}</td>
+        <td>{{ICsat * 1000}}</td>
+        <td>{{ICsat * 1000000}}</td>
+      </tr>
+      <tr>
+        <td>IE</td>
+        <td>{{IE}}</td>
+        <td>{{IE * 1000}}</td>
+        <td>{{IE * 1000000}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!--Resistencias-->
+  <table class="container mb-5" style="margin-left:auto;margin-right:auto">
+    <thead>
+      <tr>
+        <th><h1>Resistencia</h1></th>
+        <th><h1>Ohms</h1></th>
+        <th><h1>Kilo Ohms</h1></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>RC</td>
+        <td>{{RC}}</td>
+        <td>{{RC / 1000}}</td>
+      </tr>
+      <tr>
+        <td>RE</td>
+        <td>{{RE}}</td>
+        <td>{{RE / 1000}}</td>
+      </tr>
+      <tr>
+        <td>RB</td>
+        <td>{{RB}}</td>
+        <td>{{RB / 1000}}</td>
+      </tr>
+      <tr>
+        <td>R1</td>
+        <td>{{R1}}</td>
+        <td>{{R1 / 1000}}</td>
+      </tr>
+      <tr>
+        <td>R2</td>
+        <td>{{R2}}</td>
+        <td>{{R2 / 1000}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!--Ganancia-->
+  <table class="container mb-5" style="margin-left:auto;margin-right:auto">
+    <thead>
+      <tr >
+        <th><h1>Ganancia</h1></th>
+        <th><h1></h1></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Beta</td>
+        <td>{{Beta}}</td>
+      </tr>
+    </tbody>
+  </table>

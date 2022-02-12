@@ -1,0 +1,103 @@
+
+<body class="mt-5">
+  <header>
+    <h1 style="color: #94a353;">Calculadora de valores de circuitos con transistores BJT</h1>
+  </header>
+<div class="card-deck">
+  <div class="card border-info mb-3" style="max-width: 18rem;">
+    <div class="card-body">
+      <h3 class="card-header" style="color: #561d25;">Polarizacion Fija</h3>
+      <div class="card-body text-info">
+        <h5 class="card-title" style="color: #94a353;"> <font size="+1.5">Valores necesitados</font></h5>
+        <div class="card-text" style="color: #94a353;">
+          <table>
+            <td>
+                Vcc Rb Rc Rc y Beta
+            </td>
+            <td>
+              <img class="card-img" src="../assets/final_fija.jpg" alt="Card image cap">
+            </td>
+          </table>
+        </div>
+      </div>
+    </div>
+    <button (click)="fija()" mat-button style="margin-top: 50px;">Comenzar</button>
+  </div>
+  <div class="card border-info mb-3" style="max-width: 18rem;">              
+    <div class="card-body">
+      <h3 class="card-header" style="color: #561d25;">Polarización de Emisor</h3>
+      <div class="card-body text-info">
+        <h5 class="card-title" style="color: #94a353;"> <font size="+1.5">Valores necesitados</font></h5> 
+        <div class="card-text" style="color: #94a353;">
+          <table>
+            <td>
+                Vcc Rb Rc Re y Beta
+            </td>
+            <td>
+              <img class="card-img" src="../assets/final_emisor.jpg" alt="Card image cap">
+            </td>
+          </table>
+        </div>
+      </div>
+    </div>
+    <button (click)="emisor()" mat-button>Comenzar</button>
+  </div>
+  <div class="card border-info mb-3" style="max-width: 18rem;">                 
+    <div class="card-body">
+      <h3 class="card-header" style="color: #561d25;">Divisor de voltaje</h3>
+      <div class="card-body text-info">
+        <h5 class="card-title" style="color: #94a353;"> <font size="+1.5">Valores necesitados</font></h5>
+        <div class="card-text" style="color: #94a353;">
+          <table>
+            <td>
+                Vcc Rc Re Beta R1 y R2
+            </td>
+            <td>
+              <img class="card-img" src="../assets/final_div_voltaje.jpg" alt="Card image cap">
+            </td>
+          </table>
+        </div>
+      </div>
+    </div>
+    <button (click)="divisor()" mat-button>Comenzar</button>
+  </div>
+  <div class="card border-info mb-3" style="max-width: 18rem;">               
+    <div class="card-body">
+      <h3 class="card-header" style="color: #561d25;">Realimentación del colector</h3>
+      <div class="card-body text-info">
+        <h5 class="card-title" style="color: #94a353;"> <font size="+1.5">Valores necesitados</font></h5>
+        <div class="card-text" style="color: #94a353;">
+          <table>
+            <td>
+                Vcc Rc Re Rb y Beta
+            </td>
+            <td>
+              <img class="card-img" src="../assets/final_realimentacion.jpg" alt="Card image cap">
+            </td>
+          </table>
+        </div>
+      </div>
+    </div>
+    <button (click)="realimentacion()" mat-button>Comenzar</button>
+  </div> 
+</div>
+<div class="card border-info mb-3" style="max-width: 18rem;">              
+  <div class="card-body">
+    <h3 class="card-header" style="color: #561d25;">Polarización Base comun</h3>
+    <div class="card-body text-info">
+      <h5 class="card-title" style="color: #94a353;"> <font size="+1.5">Valores necesitados</font></h5> 
+      <div class="card-text" style="color: #94a353;">
+        <table>
+          <td>
+              Vcc Rb Rc Re y Beta
+          </td>
+          <td>
+            <img class="card-img" src="../assets/base.png" alt="Card image cap">
+          </td>
+        </table>
+      </div>
+    </div>
+  </div>
+  <button (click)="base()" mat-button>Comenzar</button>
+</div>
+</body>
